@@ -129,6 +129,7 @@ function setupBoard() {
                 }
                 if (won) {
                     setTimeout(() => alert("You won!"), 0)
+                    isOver = true
                 }
             })
 
