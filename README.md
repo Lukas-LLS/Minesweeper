@@ -3,6 +3,7 @@
 ## Description
 
 This is a simple minesweeper game.
+
 ![Minesweeper](https://github.com/Lukas-LLS/Minesweeper/blob/master/images/example.png)
 
 ## How to play
