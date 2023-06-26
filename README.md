@@ -6,6 +6,9 @@ This is a simple minesweeper game.
 
 ![Minesweeper](https://github.com/Lukas-LLS/Minesweeper/blob/master/images/example.png)
 
+> Note: The game only works for devices with a large enough screen.
+> It is not optimized for mobile devices.
+
 ## How to play
 
 1. Click on a cell to reveal it.
