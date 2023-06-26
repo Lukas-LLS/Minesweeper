@@ -1,0 +1,87 @@
+body {
+    background-color: #202020;
+    color: #d0d0d0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+p.description {
+    text-align: center;
+    font-size: 20px;
+}
+
+div.board {
+    border: darkgray 2px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    width: 60%;
+    height: 60%;
+}
+
+div.cell {
+    background-color: #404040;
+    border: darkgray 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 100px;
+    margin: 5px;
+    width: 100px;
+}
+
+img.flag-img {
+    height: 100px;
+    width: 100px;
+}
+
+img.bomb-img {
+    height: 100px;
+    width: 100px;
+}
+
+p.text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%
+}
+
+p.one {
+    color: cornflowerblue;
+}
+
+p.two {
+    color: lightgreen;
+}
+
+p.three {
+    color: tomato;
+}
+
+p.four {
+    color: orange;
+}
+
+p.five {
+    color: red;
+}
+
+p.six {
+    color: darkred;
+}
+
+p.seven {
+    color: purple;
+}
+
+p.eight {
+    color: darkblue;
+}
