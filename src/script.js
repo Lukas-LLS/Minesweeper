@@ -23,7 +23,6 @@ function setupBoard() {
                 if (!event.altKey || cell.classList.contains("clicked") || isOver) {
                     return
                 }
-                console.log("Click at " + i + " " + j)
                 if (cell.classList.contains("flag")) {
                     cell.classList.remove("flag")
                     cell.children[0].remove()
