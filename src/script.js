@@ -58,7 +58,7 @@ function setupBoard() {
                         }
                     }
                     isOver = true
-                    setTimeout(() => alert("You lost!"), 0)
+                    setTimeout(() => alert("You lost!"), 10)
                     return
                 }
 
@@ -127,7 +127,7 @@ function setupBoard() {
                     }
                 }
                 if (won) {
-                    setTimeout(() => alert("You won!"), 0)
+                    setTimeout(() => alert("You won!"), 10)
                     isOver = true
                 }
             })
