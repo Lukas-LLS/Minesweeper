@@ -23,6 +23,7 @@ function setupBoard() {
                 if (!event.altKey || cell.classList.contains("clicked") || isOver) {
                     return
                 }
+
                 if (cell.classList.contains("flag")) {
                     cell.classList.remove("flag")
                     cell.children[0].remove()
@@ -39,9 +40,11 @@ function setupBoard() {
                 if (event.altKey || cell.classList.contains("clicked") || isOver) {
                     return
                 }
+
                 if (cell.classList.contains("flag")) {
                     return
                 }
+
                 if (cell.classList.contains("bomb")) {
                     for (let k = 0; k < dimension; k++) {
                         for (let l = 0; l < dimension; l++) {
@@ -73,6 +76,58 @@ function setupBoard() {
                         }
                     }
                 }
+                cell.classList.add("clicked")
+
+                let text = document.createElement("p")
+                text.classList.add("text")
+
+                switch (bombs) {
+                    case 1:
+                        text.classList.add("one")
+                        break
+                    case 2:
+                        text.classList.add("two")
+                        break
+                    case 3:
+                        text.classList.add("three")
+                        break
+                    case 4:
+                        text.classList.add("four")
+                        break
+                    case 5:
+                        text.classList.add("five")
+                        break
+                    case 6:
+                        text.classList.add("six")
+                        break
+                    case 7:
+                        text.classList.add("seven")
+                        break
+                    case 8:
+                        text.classList.add("eight")
+                        break
+                }
+
+                text.innerText = bombs.toString()
+
+                if (cell.children.length === 0) {
+                    cell.appendChild(text)
+                }
+
+                let won = true
+                for (let k = 0; k < dimension; k++) {
+                    for (let l = 0; l < dimension; l++) {
+                        if (!document.getElementById(`${k}${l}`).classList.contains("clicked") && !document.getElementById(`${k}${l}`).classList.contains("bomb")) {
+                            won = false
+                        }
+                    }
+                }
+
+                if (won) {
+                    setTimeout(() => alert("You won!"), 0)
+                    isOver = true
+                }
+
                 if (bombs === 0) {
                     for (let k = -1; k <= 1; k++) {
                         for (let l = -1; l <= 1; l++) {
@@ -82,53 +137,6 @@ function setupBoard() {
                             document.getElementById(`${i + k}${j + l}`).click()
                         }
                     }
-                }
-                cell.classList.add("clicked")
-                if (bombs >= 0) {
-                    let text = document.createElement("p")
-                    text.classList.add("text")
-                    switch (bombs) {
-                        case 1:
-                            text.classList.add("one")
-                            break
-                        case 2:
-                            text.classList.add("two")
-                            break
-                        case 3:
-                            text.classList.add("three")
-                            break
-                        case 4:
-                            text.classList.add("four")
-                            break
-                        case 5:
-                            text.classList.add("five")
-                            break
-                        case 6:
-                            text.classList.add("six")
-                            break
-                        case 7:
-                            text.classList.add("seven")
-                            break
-                        case 8:
-                            text.classList.add("eight")
-                            break
-                    }
-                    text.innerText = bombs.toString()
-                    if (cell.children.length === 0) {
-                        cell.appendChild(text)
-                    }
-                }
-                let won = true
-                for (let k = 0; k < dimension; k++) {
-                    for (let l = 0; l < dimension; l++) {
-                        if (!document.getElementById(`${k}${l}`).classList.contains("clicked") && !document.getElementById(`${k}${l}`).classList.contains("bomb")) {
-                            won = false
-                        }
-                    }
-                }
-                if (won) {
-                    setTimeout(() => alert("You won!"), 0)
-                    isOver = true
                 }
             })
 
