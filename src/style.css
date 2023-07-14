@@ -15,6 +15,18 @@ p.description {
     font-size: 20px;
 }
 
+button.reset {
+    background-color: #404040;
+    border: darkgray 2px solid;
+    border-radius: 5px;
+    color: #d0d0d0;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 auto 20px;
+    display: block;
+    padding: 10px;
+}
+
 div.board {
     border: darkgray 2px solid;
     border-radius: 5px;

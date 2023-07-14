@@ -1,4 +1,5 @@
 let isOver = false
+let isFirstClick = true
 
 function setupBoard() {
     const dimension = 8
@@ -37,15 +38,16 @@ function setupBoard() {
             })
 
             cell.addEventListener("click", (event) => {
-                if (event.altKey || cell.classList.contains("clicked") || isOver) {
-                    return
-                }
-
-                if (cell.classList.contains("flag")) {
+                if (event.altKey || cell.classList.contains("clicked") || isOver || cell.classList.contains("flag")) {
                     return
                 }
 
                 if (cell.classList.contains("bomb")) {
+                    if (isFirstClick) {
+                        resetBoard()
+                        document.getElementById(`${i}${j}`).click()
+                        return
+                    }
                     for (let k = 0; k < dimension; k++) {
                         for (let l = 0; l < dimension; l++) {
                             let currentCell = document.getElementById(`${k}${l}`);
@@ -64,6 +66,8 @@ function setupBoard() {
                     setTimeout(() => alert("You lost!"), 10)
                     return
                 }
+
+                isFirstClick = false
 
                 let bombs = 0
                 for (let k = -1; k <= 1; k++) {
@@ -145,4 +149,13 @@ function setupBoard() {
 
         board.appendChild(row)
     }
+}
+
+function resetBoard() {
+    let board = document.getElementById("board")
+    while (board.childElementCount > 0) {
+        board.removeChild(board.firstChild)
+    }
+    isFirstClick = true
+    setupBoard()
 }
