@@ -157,5 +157,6 @@ function resetBoard() {
         board.removeChild(board.firstChild)
     }
     isFirstClick = true
+    isOver = false
     setupBoard()
 }
