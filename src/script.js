@@ -63,7 +63,19 @@ function setupBoard() {
                         }
                     }
                     isOver = true
-                    setTimeout(() => alert("You lost!"), 10)
+                    setTimeout(() => {
+                        let resultBox = document.getElementById("result")
+                        let text = document.createElement("p")
+                        let close = document.createElement("button")
+                        text.innerText = "You lost!"
+                        close.innerText = "Close"
+                        close.addEventListener("click", () => {
+                            resultBox.close()
+                        })
+                        resultBox.appendChild(text)
+                        resultBox.appendChild(close)
+                        resultBox.showModal()
+                    }, 10)
                     return
                 }
 
@@ -128,7 +140,19 @@ function setupBoard() {
                 }
 
                 if (won) {
-                    setTimeout(() => alert("You won!"), 10)
+                    setTimeout(() => {
+                        let resultBox = document.getElementById("result")
+                        let text = document.createElement("p")
+                        let close = document.createElement("button")
+                        text.innerText = "You won!"
+                        close.innerText = "Close"
+                        close.addEventListener("click", () => {
+                            resultBox.close()
+                        })
+                        resultBox.appendChild(text)
+                        resultBox.appendChild(close)
+                        resultBox.showModal()
+                    }, 10)
                     isOver = true
                 }
 
@@ -153,9 +177,14 @@ function setupBoard() {
 
 function resetBoard() {
     let board = document.getElementById("board")
+    let resultBox = document.getElementById("result")
     while (board.childElementCount > 0) {
         board.removeChild(board.firstChild)
     }
+    while (resultBox.childElementCount > 0) {
+        resultBox.removeChild(resultBox.firstChild)
+    }
+    resultBox.close()
     isFirstClick = true
     isOver = false
     setupBoard()
