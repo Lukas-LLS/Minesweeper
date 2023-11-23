@@ -53,9 +53,9 @@ div.cell {
     border: darkgray 1px solid;
     border-radius: 5px;
     cursor: pointer;
-    height: 100px;
+    height: 7.6vh;
     margin: 5px;
-    width: 100px;
+    width: 7.6vh;
 }
 
 img.flag-img {
