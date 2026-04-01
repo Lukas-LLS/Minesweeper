@@ -1,9 +1,13 @@
 let isOver = false
 let isFirstClick = true
 
+window.addEventListener("load", () => {
+    setupBoard()
+})
+
 function setupBoard() {
     const dimension = 8
-    let bombs = 12
+    let bombs = getTotalBombCount()
     let board = document.getElementById("board")
 
     for (let i = 0; i < dimension; i++) {
@@ -188,4 +192,13 @@ function resetBoard() {
     isFirstClick = true
     isOver = false
     setupBoard()
+}
+
+function getTotalBombCount() {
+    let bombCountInput = document.getElementById("mines")
+    let totalBombCount = parseInt(bombCountInput.value)
+    if (isNaN(totalBombCount) || totalBombCount < 1 || totalBombCount > 63) {
+        totalBombCount = 12
+    }
+    return totalBombCount
 }

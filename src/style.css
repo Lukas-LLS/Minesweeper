@@ -15,6 +15,21 @@ p.description {
     font-size: 20px;
 }
 
+label {
+    display: block;
+    text-align: center;
+    margin: 20px auto 10px;
+}
+
+input {
+    background-color: #404040;
+    color: #d0d0d0;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 auto 20px;
+}
+
 button {
     background-color: #404040;
     border: darkgray 2px solid;

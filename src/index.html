@@ -9,13 +9,16 @@
     <link href="style.css" rel="stylesheet">
     <script src="script.js"></script>
 </head>
-<body onload="setupBoard()">
+<body>
 <h1>Minesweeper</h1>
 <p class="description">
     Click normally to reveal a square. <br>
     Click while holding alt to flag a square. <br>
     There are 12 mines in total. <br>
+    The total amount of mine can be changed below. <br>
 </p>
+<label for="mines">Mine count</label>
+<input id="mines" max="63" min="1" onchange="resetBoard()" type="number" value="12">
 <button class="reset" onclick="resetBoard()">Reset board</button>
 <dialog class="result" id="result"></dialog>
 <div class="board" id="board">
